@@ -31,7 +31,7 @@ class Roomba
     x = 0;
     y = 0;
     rad = 0;
-    this.r = r;
+    this.r = r / (1+outer_upper_line_weight_rate);
   }
   
   void draw()
@@ -40,6 +40,7 @@ class Roomba
     translate(x,y);
     rotate(rad);
 
+    ellipseMode(CENTER);
     
     stroke(c_lblack);
     strokeWeight(r*outer_line_weight_rate);
